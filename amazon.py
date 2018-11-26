@@ -28,3 +28,6 @@ class AmazonScraper(object):
                     'rating': (self.html.xpath('//*[@id="averageCustomerReviews"]/span[1]/span/@title') or [''])[0].strip(),
                     'availability': (self.html.xpath('//*[@id="availability"]/span/text()') or [''])[0].strip()}
 
+if __name__ == '__main__':
+    x = AmazonScraper('B06XD3LXXK').details()
+    print(x)
